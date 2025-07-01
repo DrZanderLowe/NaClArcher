@@ -1,0 +1,67 @@
+
+    Welcome!
+    
+    Needed programs and libraries:
+    - Python 3.10.12
+    - Tkinter 8.6
+    - MatPlotLib 3.5.1
+    
+    Manual:
+1. To start program:
+    -double click front.py file
+    -run command in terminal of program dir "python front.py" or "python3 front.py"
+
+2. Basic Calculation button:
+    -allows You to see all results of single measurment
+    -in text fields write:
+        -temperature in Kelwins in place of T[K]
+        -pressure in MPa in place of p[MPa]
+        -molality in mol*kg-1 in place of M[mol/kg]
+    
+3. Range Calculation button:
+    -allows You to see results for a range of any parameter
+    -in text fields write:
+        -whole number in place of steps
+        -to write a range simply write it in any of below text fields
+          e.g.- write "1.5-9.5" instead of just one number for pressure
+        -temperature in Kelwins in place of T[K]
+        -pressure in MPa in place of p[MPa]
+        -molality in mol*kg-1 in place of M[mol/kg]
+
+4. Calculat Button:
+    -calculates for parameters that were input by the user
+    -for basic calculation the output should show table with results
+    -for range calculation the output should show plot with density on y axis and
+     parameter that was set as a range on x axis
+     
+5. Save Button:
+    -allows You to save results of calculations
+    -for basic calculation it will save the table You see as a result
+    -for range calculation it will save a table with parameters T,p,m of each 
+     calculation, apparent molar properties, solution property and solvent property
+     
+     
+     Changes made in fortran codes:
+     
+Changelog for nacl-2.for file:
+    -all "alog" functions were changed to "log"
+    -added "Continue" to all "Do" loops
+    -changed "write(5,...)" to "write(*,...)"
+    -changed arrays from static to allocated
+    -changed ".eq.0" and ".nq.0" to "abs < 1.0e-26" and "abs > 1.0e-26"
+    
+Changelog for Steam.for file:     
+    -changed HOLLERITH variables into CHARACTER
+    -changed types of lists holding previous HOLLERITH variables from DOUBLE-PRECISION
+     to CHARACTER
+    -changed all types from (2)
+    -added variables that werent properly stored (nr1-4, nt1-4, nrmax, ntmax) to 
+     locations that required them
+    -changed ".eq.0" and ".nq.0" to "abs < 1.0e-26" and "abs > 1.0e-26"
+    -commented out "tsave if" statement
+
+Directory "Fortran_core" contains both fortran code files nacl-2.for and Steam.for
+
+Changes listed above and front program were made by:
+    Lana Svetlicic from University of Silesia, Poland, contact email: svetlicic02@gmail.com
+      
